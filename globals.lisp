@@ -52,14 +52,10 @@ generateing the map. ")
 (defparameter world-topmost 0)
 (defparameter world-rightmost 1600)
 (defparameter world-bottommost 1200)
-(defparameter world-width (- world-rightmost world-leftmost))
-(defparameter world-height (- world-bottommost world-topmost))
 ;; these params defines the biggest places that user can go via moving the
 ;; mouse
 (defparameter screen-leftmost world-leftmost)
 (defparameter screen-topmost world-topmost)
-(defparameter screen-rightmost (- world-rightmost screen-width))
-(defparameter screen-bottommost (- world-bottommost screen-height))
 
 (defparameter star-life-max 10)
 (defparameter star-life-min 3)
@@ -75,9 +71,7 @@ generateing the map. ")
 ;; position on the worldmap. 
 ;; these are the margin place, outside which the moving is activated. 
 (defparameter margin-left 10)
-(defparameter margin-right (- screen-width 10))
 (defparameter margin-top 10)
-(defparameter margin-bottom (- screen-height 10))
 
 ;; defines the background
 (defparameter bg-star-size-max 2)
@@ -98,6 +92,17 @@ generateing the map. ")
        (list (random world-width) (random world-height)
 	     (+ bg-star-size-min (random (- bg-star-size-max
 					    bg-star-size-min -1))))))
+
+(defun load-file-set-parameters (filename)
+  "read one file and load all the parameters"
+  (with-open-file (s filename)
+    (do ((form (read s) (read s nil 'eof)))
+	((eq form 'eof) nil)
+      (if (not (= (length form) 2))
+	  (error "configure file format not right!"))
+      (setq form (cons 'defparameter form))
+      (eval form))))
+
 (defun auto-generate-planets (amount)
   "auto generate planets and normally set the *planet-list* var.
 AMOUNT is how many planet to generate in all,
@@ -179,4 +184,15 @@ INIT-AMOUNT is how many planets one player own at the beginning of game"
   ;; defaultly, the first planet for player1, then player2
   (setf (player (fifth *planet-list*)) *player1*)
   (setf (player (sixth *planet-list*)) *player2*)
+  
+  ;; load all the configure file
+  (load-file-set-parameters "starwar.conf")
+
+  (defparameter screen-rightmost (- world-rightmost screen-width))
+  (defparameter screen-bottommost (- world-bottommost screen-height))
+  (defparameter world-width (- world-rightmost world-leftmost))
+  (defparameter world-height (- world-bottommost world-topmost))
+  (defparameter margin-bottom (- screen-height 10))
+  (defparameter margin-right (- screen-width 10))
+  
   (set-game-running t))

@@ -3,8 +3,52 @@
 
   this is a game written in *CL* . It's very simple, but still better than the worm game for me. If you are curious about writting games on CL, and think the [[http://lispgames.org/index.php/Common_Worm][worm]] game /too/ simple, you may check this. 
   
-  This game is developed under *sbcl* of linux, and I am not sure whether it could work under other platforms. 
+  This game is developed under *sbcl* of linux, and I am not sure whether it could work under other platforms.
   
+  Tested platform:
+  - sbcl/linux: good
+  - sbcl/winodws: little bug (life of planet disappeared, playable)
+    
+  I have id at /gmail/ as /xzpeter/. Reach me via email any time. 
+  
+* screenshots
+  
+  Here are some screenshots of the game. 
+  
+  You are *TEAM BLUE* and your job is conqure the *RED TEAM* . The small stuffs are your warriors!
+  
+#+BEGIN_HTML
+<div align="center">
+<a href="p0.png">
+<img title=""
+src="p0.png"/>
+</a></div>
+#+END_HTML
+  
+  You can select one planet and see the *LIFE* of it (the bar at the bottom-right of the screen). You can move soldiers by hold /left mouse button/ on your planet and /release/ at the goal planet. 
+
+#+BEGIN_HTML
+<div align="center">
+<a href="p1.png">
+<img title=""
+src="p1.png"/>
+</a></div>
+#+END_HTML
+
+  If your team is strong enough, the goal planet will be yours! 
+
+#+BEGIN_HTML
+<div align="center">
+<a href="p2.png">
+<img title=""
+src="p2.png"/>
+</a></div>
+#+END_HTML
+
+* get the source code
+ 
+  All the source code can be downloaded at github [[https://github.com/xzpeter/starwar][here]]. 
+
 * installation
 
   To run the game, you have to:
@@ -55,4 +99,8 @@ sudo apt-get install sbcl
 
 * how to play
   
-  This will be filled in later on. 
+  mostly use mouse left button to play. Single click on planets to select it; Hold to make an /path arrow/ to transport soldiers on the original planet to the target planet. 
+
+  *P* to /pause/ or /unpause/ the game. *ESC* to /quit/. 
+
+  *Blue* is yours, and *Red* is the computer. Try to eliminate all the *Red* planets! 

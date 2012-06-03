@@ -7,7 +7,7 @@ lang="en" xml:lang="en">
 <title>StarWar HomePage</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-06-03 13:43:13 CST"/>
+<meta name="generated" content="2012-06-03 15:39:18 CST"/>
 <meta name="author" content="Xu Zhe"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -93,16 +93,18 @@ lang="en" xml:lang="en">
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#sec-1">1 intro </a></li>
-<li><a href="#sec-2">2 installation </a>
+<li><a href="#sec-2">2 screenshots </a></li>
+<li><a href="#sec-3">3 get the source code </a></li>
+<li><a href="#sec-4">4 installation </a>
 <ul>
-<li><a href="#sec-2-1">2.1 install the latest <b>sbcl</b> </a></li>
-<li><a href="#sec-2-2">2.2 install <b>quicklisp</b> on that sbcl </a></li>
-<li><a href="#sec-2-3">2.3 install required libraries </a></li>
-<li><a href="#sec-2-4">2.4 configure <i>asdf</i> system </a></li>
-<li><a href="#sec-2-5">2.5 load the game and run </a></li>
+<li><a href="#sec-4-1">4.1 install the latest <b>sbcl</b> </a></li>
+<li><a href="#sec-4-2">4.2 install <b>quicklisp</b> on that sbcl </a></li>
+<li><a href="#sec-4-3">4.3 install required libraries </a></li>
+<li><a href="#sec-4-4">4.4 configure <i>asdf</i> system </a></li>
+<li><a href="#sec-4-5">4.5 load the game and run </a></li>
 </ul>
 </li>
-<li><a href="#sec-3">3 how to play </a></li>
+<li><a href="#sec-5">5 how to play </a></li>
 </ul>
 </div>
 </div>
@@ -116,15 +118,85 @@ lang="en" xml:lang="en">
   this is a game written in <b>CL</b> . It's very simple, but still better than the worm game for me. If you are curious about writting games on CL, and think the <a href="http://lispgames.org/index.php/Common_Worm">worm</a> game <i>too</i> simple, you may check this. 
 </p>
 <p>  
-  This game is developed under <b>sbcl</b> of linux, and I am not sure whether it could work under other platforms. 
+  This game is developed under <b>sbcl</b> of linux, and I am not sure whether it could work under other platforms.
+</p>
+<p>  
+  Tested platform:
+</p><ul>
+<li>sbcl/linux: good
+</li>
+<li>sbcl/winodws: little bug (life of planet disappeared, playable)
+</li>
+</ul>
+
+
+<p>    
+  I have id at <i>gmail</i> as <i>xzpeter</i>. Reach me via email any time. 
 </p>
 </div>
 
 </div>
 
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> installation </h2>
+<h2 id="sec-2"><span class="section-number-2">2</span> screenshots </h2>
 <div class="outline-text-2" id="text-2">
+
+
+<p>  
+  Here are some screenshots of the game. 
+</p>
+<p>  
+  You are <b>TEAM BLUE</b> and your job is conqure the <b>RED TEAM</b> . The small stuffs are your warriors!
+</p>
+  
+
+<div align="center">
+<a href="p0.png">
+<img title=""
+src="p0.png"/>
+</a></div>
+
+<p>  
+  You can select one planet and see the <b>LIFE</b> of it (the bar at the bottom-right of the screen). You can move soldiers by hold <i>left mouse button</i> on your planet and <i>release</i> at the goal planet. 
+</p>
+
+
+<div align="center">
+<a href="p1.png">
+<img title=""
+src="p1.png"/>
+</a></div>
+
+<p>
+  If your team is strong enough, the goal planet will be yours! 
+</p>
+
+
+<div align="center">
+<a href="p2.png">
+<img title=""
+src="p2.png"/>
+</a></div>
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> get the source code </h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p> 
+  All the source code can be downloaded at github <a href="https://github.com/xzpeter/starwar">here</a>. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> installation </h2>
+<div class="outline-text-2" id="text-4">
 
 
 <p>
@@ -133,9 +205,9 @@ lang="en" xml:lang="en">
 
 </div>
 
-<div id="outline-container-2-1" class="outline-3">
-<h3 id="sec-2-1"><span class="section-number-3">2.1</span> install the latest <b>sbcl</b> </h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> install the latest <b>sbcl</b> </h3>
+<div class="outline-text-3" id="text-4-1">
 
 
 <p>    
@@ -156,9 +228,9 @@ lang="en" xml:lang="en">
 
 </div>
 
-<div id="outline-container-2-2" class="outline-3">
-<h3 id="sec-2-2"><span class="section-number-3">2.2</span> install <b>quicklisp</b> on that sbcl </h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> install <b>quicklisp</b> on that sbcl </h3>
+<div class="outline-text-3" id="text-4-2">
 
 
 <p>   
@@ -168,9 +240,9 @@ lang="en" xml:lang="en">
 
 </div>
 
-<div id="outline-container-2-3" class="outline-3">
-<h3 id="sec-2-3"><span class="section-number-3">2.3</span> install required libraries </h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> install required libraries </h3>
+<div class="outline-text-3" id="text-4-3">
 
 
 <p>    
@@ -192,9 +264,9 @@ lang="en" xml:lang="en">
 
 </div>
 
-<div id="outline-container-2-4" class="outline-3">
-<h3 id="sec-2-4"><span class="section-number-3">2.4</span> configure <i>asdf</i> system </h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> configure <i>asdf</i> system </h3>
+<div class="outline-text-3" id="text-4-4">
 
 
 <p>    
@@ -216,9 +288,9 @@ lang="en" xml:lang="en">
 
 </div>
 
-<div id="outline-container-2-5" class="outline-3">
-<h3 id="sec-2-5"><span class="section-number-3">2.5</span> load the game and run </h3>
-<div class="outline-text-3" id="text-2-5">
+<div id="outline-container-4-5" class="outline-3">
+<h3 id="sec-4-5"><span class="section-number-3">4.5</span> load the game and run </h3>
+<div class="outline-text-3" id="text-4-5">
 
 
 <p>    
@@ -242,19 +314,25 @@ lang="en" xml:lang="en">
 
 </div>
 
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> how to play </h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> how to play </h2>
+<div class="outline-text-2" id="text-5">
 
 
 <p>  
-  This will be filled in later on. 
+  mostly use mouse left button to play. Single click on planets to select it; Hold to make an <i>path arrow</i> to transport soldiers on the original planet to the target planet. 
+</p>
+<p>
+  <b>P</b> to <i>pause</i> or <i>unpause</i> the game. <b>ESC</b> to <i>quit</i>. 
+</p>
+<p>
+  <b>Blue</b> is yours, and <b>Red</b> is the computer. Try to eliminate all the <b>Red</b> planets! 
 </p></div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2012-06-03 13:43:13 CST</p>
+<p class="date">Date: 2012-06-03 15:39:18 CST</p>
 <p class="author">Author: Xu Zhe</p>
 <p class="creator">Org version 7.7 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

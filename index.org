@@ -62,15 +62,15 @@ src="p2.png"/>
 sudo apt-get install sbcl
 #+END_SRC
 
-    Or you may go to the [[www.sbcl.org][sbcl homepage]]. 
+    Or you may go to the [[http://www.sbcl.org][sbcl homepage.]]
 
 ** install *quicklisp* on that sbcl 
    
-   Quicklisp is commonly used in CL for installing packages. Refers to [[www.quicklisp.org/][it's homepage]] to get and make it work. 
+   Quicklisp is commonly used in CL for installing packages. Refers to [[http://www.quicklisp.org/][it's homepage]] to get and make it work. 
    
 ** install required libraries
     
-    here we need *lispbuilder-sdl* and *lispbuilder-sdl-ttf*. To install and load them, just run the codes below:
+    here we need *lispbuilder-sdl* and *lispbuilder-sdl-ttf*. To install and load them, just run the codes below (you have to install /quicklisp/ first of course):
     
 #+BEGIN_SRC lisp
 (ql:quickload '("lispbuilder-sdl" "lispbuilder-sdl-ttf"))
@@ -81,12 +81,13 @@ sudo apt-get install sbcl
 ** configure /asdf/ system
     
     To let /asdf/ know my package, run this: 
+    
 #+BEGIN_SRC lisp
 (push asdf:*central-registry* "PATH")
 (push asdf:*central-registry* "PATH/lib")
 #+END_SRC
     
-    Here, *PATH* should be the path of /starwar/ directory. 
+    Here, *PATH* should be the path of *starwar* directory. 
 
 ** load the game and run
     
@@ -100,6 +101,8 @@ sudo apt-get install sbcl
     have fun!
 
 * how to play
+  
+  Check the [[screenshots][screenshots]] first.
   
   mostly use mouse left button to play. Single click on planets to select it; Hold to make an /path arrow/ to transport soldiers on the original planet to the target planet. 
 

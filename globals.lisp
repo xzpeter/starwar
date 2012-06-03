@@ -10,7 +10,7 @@
 (defparameter bg-color sdl:*black*)
 (defparameter game-frame-color sdl:*white*)
 
-(defparameter fullscreen t)
+(defparameter fullscreen nil)
 (defparameter frame-rate 60)
 (defparameter scroll-speed 20)
 

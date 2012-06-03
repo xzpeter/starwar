@@ -15,7 +15,7 @@
   
   Here are some screenshots of the game. 
   
-  You are *TEAM BLUE* and your job is conqure the *RED TEAM* . The small stuffs are your warriors!
+  You are *TEAM BLUE* and your job is conqure the *RED TEAM* . The small stuffs are your warriors! The grey ones are *neutral* guys, they are lovely and just don't attack. 
   
 #+BEGIN_HTML
 <div align="center">
@@ -45,9 +45,11 @@ src="p2.png"/>
 </a></div>
 #+END_HTML
 
-* get the source code
+* download
  
   All the source code can be downloaded at github [[https://github.com/xzpeter/starwar][here]]. 
+  
+  Binaries will be released later on. 
 
 * installation
 

@@ -7,8 +7,8 @@ lang="en" xml:lang="en">
 <title>StarWar HomePage</title>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-06-03 20:45:53 CST"/>
-<meta name="author" content="Xu Zhe"/>
+<meta name="generated" content="2012-06-05 22:38:04 CST"/>
+<meta name="author" content="xzpeter"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
@@ -97,7 +97,7 @@ lang="en" xml:lang="en">
 <li><a href="#sec-3">3 download </a></li>
 <li><a href="#sec-4">4 installation </a>
 <ul>
-<li><a href="#sec-4-1">4.1 install the latest <b>sbcl</b> </a></li>
+<li><a href="#sec-4-1">4.1 install the latest <b>sbcl</b> (suggested) </a></li>
 <li><a href="#sec-4-2">4.2 install <b>quicklisp</b> on that sbcl </a></li>
 <li><a href="#sec-4-3">4.3 install required libraries </a></li>
 <li><a href="#sec-4-4">4.4 configure <i>asdf</i> system </a></li>
@@ -105,6 +105,11 @@ lang="en" xml:lang="en">
 </ul>
 </li>
 <li><a href="#sec-5">5 how to play </a></li>
+<li><a href="#sec-6">6 bugs </a>
+<ul>
+<li><a href="#sec-6-1">6.1 current </a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -130,9 +135,6 @@ lang="en" xml:lang="en">
 </ul>
 
 
-<p>    
-  I have id at <i>gmail</i> as <i>xzpeter</i>. Reach me via email any time. 
-</p>
 </div>
 
 </div>
@@ -209,7 +211,7 @@ src="p2.png"/>
 </div>
 
 <div id="outline-container-4-1" class="outline-3">
-<h3 id="sec-4-1"><span class="section-number-3">4.1</span> install the latest <b>sbcl</b> </h3>
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> install the latest <b>sbcl</b> (suggested) </h3>
 <div class="outline-text-3" id="text-4-1">
 
 
@@ -218,7 +220,7 @@ src="p2.png"/>
 </p>
 
 
-<pre class="src src-shell">sudo apt-get install sbcl
+<pre class="example">sudo apt-get install sbcl
 </pre>
 
 
@@ -254,14 +256,14 @@ src="p2.png"/>
 
 
 
-<pre class="src src-lisp">(ql:quickload '(<span style="color: #008b00;">"lispbuilder-sdl"</span> <span style="color: #008b00;">"lispbuilder-sdl-ttf"</span>))
+<pre class="example">(ql:quickload '("lispbuilder-sdl" "lispbuilder-sdl-ttf" "lispbuilder-sdl-gfx"))
 </pre>
 
 
 
 
 <p> 
-    This will download, install, compile and load the required library. 
+    This will download, install, compile and load the required library. Without the lispbuilder-sdl-gfx, the game is workable but display uncorrectly. 
 </p>
 </div>
 
@@ -278,8 +280,8 @@ src="p2.png"/>
 
 
 
-<pre class="src src-lisp">(push asdf:*central-registry* <span style="color: #008b00;">"PATH"</span>)
-(push asdf:*central-registry* <span style="color: #008b00;">"PATH/lib"</span>)
+<pre class="example">(push asdf:*central-registry* "PATH")
+(push asdf:*central-registry* "PATH/lib")
 </pre>
 
 
@@ -303,7 +305,7 @@ src="p2.png"/>
 
 
 
-<pre class="src src-lisp">(<span style="color: #4682b4; font-weight: bold;">require</span> <span style="color: #008b00;">"org.xzpeter.game.starwar"</span>)
+<pre class="example">(require "org.xzpeter.game.starwar")
 (org.xzpeter.game.starwar:run)
 </pre>
 
@@ -327,20 +329,64 @@ src="p2.png"/>
   Check the <a href="#sec-2">screenshots</a> first.
 </p>
 <p>  
-  mostly use mouse left button to play. Single click on planets to select it; Hold to make an <i>path arrow</i> to transport soldiers on the original planet to the target planet. 
+  Mostly use mouse left button to play. Single click on planets to select it; Hold the left button on your own planet, and drag it to another planet to make an <i>path arrow</i> to transport soldiers on the original planet to the target planet. 
 </p>
-<p>
-  <b>P</b> to <i>pause</i> or <i>unpause</i> the game. <b>ESC</b> to <i>quit</i>. 
+<p>  
+  Some key defines: 
 </p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">key</th><th scope="col" class="left">functions</th></tr>
+</thead>
+<tbody>
+<tr><td class="left"><b>P</b></td><td class="left">Pause or unpause the game</td></tr>
+<tr><td class="left"><b>ESC</b></td><td class="left">Quit the game</td></tr>
+<tr><td class="left"><b>+</b></td><td class="left">Speed up</td></tr>
+<tr><td class="left"><b>-</b></td><td class="left">Speed down</td></tr>
+</tbody>
+</table>
+
+
 <p>
   <b>Blue</b> is yours, and <b>Red</b> is the computer. Try to eliminate all the <b>Red</b> planets! 
-</p></div>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> bugs </h2>
+<div class="outline-text-2" id="text-6">
+
+
+<p>
+  please contact google mail with id xzpeter. 
+</p>
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> current </h3>
+<div class="outline-text-3" id="text-6-1">
+
+
+<ul>
+<li>planet life sometimes display incorrectly (disappear on some platform)
+</li>
+</ul>
+
+</div>
+</div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2012-06-03 20:45:53 CST</p>
-<p class="author">Author: Xu Zhe</p>
+<p class="date">Date: 2012-06-05 22:38:04 CST</p>
+<p class="author">Author: xzpeter</p>
 <p class="creator">Org version 7.7 with Emacs version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 

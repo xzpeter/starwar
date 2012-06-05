@@ -53,7 +53,7 @@ src="p2.png"/>
 
   To run the game, you have to:
   
-** install the latest *sbcl*
+** install the latest *sbcl* (suggested)
     
     If you are using Ubuntu or Debian, you can use aptitude to install this:
 #+BEGIN_SRC shell
@@ -71,10 +71,10 @@ sudo apt-get install sbcl
     here we need *lispbuilder-sdl* and *lispbuilder-sdl-ttf*. To install and load them, just run the codes below (you have to install /quicklisp/ first of course):
     
 #+BEGIN_SRC lisp
-(ql:quickload '("lispbuilder-sdl" "lispbuilder-sdl-ttf"))
+(ql:quickload '("lispbuilder-sdl" "lispbuilder-sdl-ttf" "lispbuilder-sdl-gfx"))
 #+END_SRC
  
-    This will download, install, compile and load the required library. 
+    This will download, install, compile and load the required library. Without the lispbuilder-sdl-gfx, the game is workable but display uncorrectly. 
 
 ** configure /asdf/ system
     
@@ -103,8 +103,15 @@ sudo apt-get install sbcl
   Check the [[screenshots][screenshots]] first.
   
   Mostly use mouse left button to play. Single click on planets to select it; Hold the left button on your own planet, and drag it to another planet to make an /path arrow/ to transport soldiers on the original planet to the target planet. 
+  
+  Some key defines: 
 
-  *P* to /pause/ or /unpause/ the game. *ESC* to /quit/. 
+| key   | functions                 |
+|-------+---------------------------|
+| *P*   | Pause or unpause the game |
+| *ESC* | Quit the game             |
+| *+*   | Speed up                  |
+| *-*   | Speed down                |
 
   *Blue* is yours, and *Red* is the computer. Try to eliminate all the *Red* planets! 
 

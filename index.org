@@ -120,6 +120,8 @@ libsdl-gfx1.2-doc - documentation files for SDL_gfx
   
   Mostly use mouse left button to play. Single click on planets to select it; Hold the left button on your own planet, and drag it to another planet to make an /path arrow/ to transport soldiers on the original planet to the target planet. 
   
+  All the maps in the game is auto generated. 
+  
   Some key defines: 
 
 | key   | functions                 |
@@ -131,6 +133,8 @@ libsdl-gfx1.2-doc - documentation files for SDL_gfx
 | *-*   | Speed down                |
 
   *Blue* is yours, and *Red* is the computer. Try to eliminate all the *Red* planets! 
+  
+  You can change the *starwar.conf* file to configure the game (as long as you know the right param)
 
 * bugs
 

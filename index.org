@@ -8,8 +8,6 @@
   Tested platform:
   - sbcl/linux: good
   - sbcl/winodws: little bug (life of planet disappeared, playable)
-    
-  I have id at /gmail/ as /xzpeter/. Reach me via email any time. 
   
 * screenshots
   
@@ -104,8 +102,17 @@ sudo apt-get install sbcl
   
   Check the [[screenshots][screenshots]] first.
   
-  mostly use mouse left button to play. Single click on planets to select it; Hold to make an /path arrow/ to transport soldiers on the original planet to the target planet. 
+  Mostly use mouse left button to play. Single click on planets to select it; Hold the left button on your own planet, and drag it to another planet to make an /path arrow/ to transport soldiers on the original planet to the target planet. 
 
   *P* to /pause/ or /unpause/ the game. *ESC* to /quit/. 
 
   *Blue* is yours, and *Red* is the computer. Try to eliminate all the *Red* planets! 
+
+* bugs
+
+  please contact google mail with id xzpeter. 
+
+
+** current
+ 
+   - planet life sometimes display incorrectly (disappear on some platform)

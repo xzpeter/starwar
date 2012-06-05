@@ -75,6 +75,22 @@ sudo apt-get install sbcl
 #+END_SRC
  
     This will download, install, compile and load the required library. Without the lispbuilder-sdl-gfx, the game is workable but display uncorrectly. 
+    
+    *CAUTION*: if during the installation process, you got something like: /...libsdl_xxx.so is missing.../ , you might have to install the libsdl libraries first. You can find the required package (if you are using Debian related distro) by using (e.g. you need libsdl_gfx.so): 
+
+#+BEGIN_SRC shell
+apt-cache search libsdl | grep gfx
+#+END_SRC
+
+    with the output: 
+
+#+BEGIN_SRC shell
+libsdl-gfx1.2-4 - drawing and graphical effects extension for SDL
+libsdl-gfx1.2-dev - development files for SDL_gfx
+libsdl-gfx1.2-doc - documentation files for SDL_gfx
+#+END_SRC
+
+    Then, *libsdl-gfx1.2-4* possibly the required one. 
 
 ** configure /asdf/ system
     

@@ -50,7 +50,7 @@ src="p2.png"/>
   Binaries will be released later on. 
 
 * installation
-
+  
   To run the game, you have to:
   
 ** install the latest *sbcl* (suggested)
@@ -125,6 +125,7 @@ libsdl-gfx1.2-doc - documentation files for SDL_gfx
 | key   | functions                 |
 |-------+---------------------------|
 | *P*   | Pause or unpause the game |
+| *R*   | Restart game              |
 | *ESC* | Quit the game             |
 | *+*   | Speed up                  |
 | *-*   | Speed down                |

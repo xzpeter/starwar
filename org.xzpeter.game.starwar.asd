@@ -9,6 +9,7 @@
   :description "A very simple starwar game. "
   :depends-on (:lispbuilder-sdl
 	       :lispbuilder-sdl-ttf
+	       :lispbuilder-sdl-gfx
 	       :org.xzpeter.game.lib)
   :components ((:file "packages")
 	       (:file "globals" :depends-on ("packages"))

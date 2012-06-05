@@ -86,6 +86,13 @@ generateing the map. ")
 (defparameter planet-core-radius 3)
 (defparameter star-max-amount 1000)
 
+(defparameter screen-rightmost (- world-rightmost screen-width))
+(defparameter screen-bottommost (- world-bottommost screen-height))
+(defparameter world-width (- world-rightmost world-leftmost))
+(defparameter world-height (- world-bottommost world-topmost))
+(defparameter margin-bottom (- screen-height 10))
+(defparameter margin-right (- screen-width 10))
+
 (defun generate-bg-stars (n)
   "generate N bg stars and return list"
   (loop repeat n collect
@@ -95,13 +102,16 @@ generateing the map. ")
 
 (defun load-file-set-parameters (filename)
   "read one file and load all the parameters"
+  ;; without this, the settings won't work
+  (in-package :org.xzpeter.game.starwar)
   (with-open-file (s filename)
     (do ((form (read s) (read s nil 'eof)))
 	((eq form 'eof) nil)
       (if (not (= (length form) 2))
 	  (error "configure file format not right!"))
       (setq form (cons 'defparameter form))
-      (eval form))))
+      (format t "eval: ~a~%" form)
+      (eval form)))) 
 
 (defun auto-generate-planets (amount)
   "auto generate planets and normally set the *planet-list* var.
@@ -152,10 +162,6 @@ INIT-AMOUNT is how many planets one player own at the beginning of game"
 		 (incf count)
 		 (setq vlist (cons v vlist)))))))))
 
-(defun set-game-running (n)
-  "set running status of the game"
-  (setf (sdl:frame-rate) (if n frame-rate -1)))
-
 (defun clear-global-vars ()
   (setq *planet-list* nil)
   (setq *running* nil)
@@ -181,18 +187,16 @@ INIT-AMOUNT is how many planets one player own at the beginning of game"
 	*bg-stars* (generate-bg-stars bg-star-n)
 	*planet-list* (planet-sort-by-size
 		       (auto-generate-planets planet-total)))
-  ;; defaultly, the first planet for player1, then player2
+  
   (setf (player (fifth *planet-list*)) *player1*)
   (setf (player (sixth *planet-list*)) *player2*)
   
   ;; load all the configure file
   (load-file-set-parameters "starwar.conf")
 
-  (defparameter screen-rightmost (- world-rightmost screen-width))
-  (defparameter screen-bottommost (- world-bottommost screen-height))
-  (defparameter world-width (- world-rightmost world-leftmost))
-  (defparameter world-height (- world-bottommost world-topmost))
-  (defparameter margin-bottom (- screen-height 10))
-  (defparameter margin-right (- screen-width 10))
-  
-  (set-game-running t))
+  (setq screen-rightmost (- world-rightmost screen-width))
+  (setq screen-bottommost (- world-bottommost screen-height))
+  (setq world-width (- world-rightmost world-leftmost))
+  (setq world-height (- world-bottommost world-topmost))
+  (setq margin-bottom (- screen-height 10))
+  (setq margin-right (- screen-width 10)))

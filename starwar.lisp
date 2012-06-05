@@ -100,7 +100,8 @@
      (increase-star-speed))
     (:sdl-key-space
      (when *game-over*
-       (initialize-game)))))
+       (clear-global-vars)
+       (set-game-running t)))))
 
 ;; draw the information line by line
 (defun draw-information (&rest infos)
@@ -215,10 +216,6 @@ the outter rect. the rect is filled by VALUE/FULL-VALUE"
 				    (life *selected-planet*)
 				    (r *selected-planet*))))
 
-(defun initialize-game ()
-  (sdl:clear-display bg-color)
-  (clear-global-vars))
-
 (defun winner-p ()
   "detect if there is winner"
   (let ((p1 nil)
@@ -250,20 +247,28 @@ the outter rect. the rect is filled by VALUE/FULL-VALUE"
     (when (use-ai player)
       (update-player-ai player))))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun set-game-running (n)
+  "set running status of the game"
+  (setf (sdl:frame-rate) (if n frame-rate -1)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; main thread
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun main ()
+  ;; this might be useful when making binary images
+  (in-package :org.xzpeter.game.starwar)
   (setf *running* t
 	*paused*  nil)
   (sdl:with-init (sdl:sdl-init-video)
     (setq sdl:*default-font* (sdl:initialise-font sdl:*font-8x13o*))
     ;; (sdl:initialise-default-font sdl:*font-9x18b*)
+    (clear-global-vars)
+    (format t "fullscreen: ~a~%" fullscreen)
     (sdl:window screen-width screen-height
 		:fullscreen fullscreen
 		:title-caption "Star War"
 		:icon-caption "Star War")
-    (initialize-game)
+    (set-game-running t)
     (sdl:with-events ()
       (:quit-event () (prog1 t
 			(setf *running* nil)

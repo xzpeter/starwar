@@ -257,8 +257,6 @@ the outter rect. the rect is filled by VALUE/FULL-VALUE"
 (defun main ()
   ;; this might be useful when making binary images
   (in-package :org.xzpeter.game.starwar)
-  (setf *running* t
-	*paused*  nil)
   (sdl:with-init (sdl:sdl-init-video)
     (setq sdl:*default-font* (sdl:initialise-font sdl:*font-8x13o*))
     ;; (sdl:initialise-default-font sdl:*font-9x18b*)

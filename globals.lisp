@@ -102,8 +102,8 @@ generateing the map. ")
 
 (defun load-file-set-parameters (filename)
   "read one file and load all the parameters"
-  ;; without this, the settings won't work
-  (in-package :org.xzpeter.game.starwar)
+  ;; here, we MUST make sure that we are in the RIGHT package (that is the
+  ;; starwar package. or the parameters will not be set! 
   (with-open-file (s filename)
     (do ((form (read s) (read s nil 'eof)))
 	((eq form 'eof) nil)
@@ -163,6 +163,9 @@ INIT-AMOUNT is how many planets one player own at the beginning of game"
 		 (setq vlist (cons v vlist)))))))))
 
 (defun clear-global-vars ()
+  ;; without this, all the random numbers will be the same after saving
+  ;; the lisp core image
+  (setq *random-state* (make-random-state t))
   (setq *planet-list* nil)
   (setq *running* nil)
   (setq *paused* nil

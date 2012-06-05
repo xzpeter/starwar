@@ -93,7 +93,7 @@
 	   (not *paused*))
      (set-game-running *paused*))
     (:sdl-key-r
-     (initialize-game))
+     (clear-global-vars))
     (:sdl-key-minus
      (decrease-star-speed))
     (:sdl-key-equals

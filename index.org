@@ -135,7 +135,7 @@ libsdl-gfx1.2-doc - documentation files for SDL_gfx
 
   please contact google mail with id xzpeter. 
 
-
 ** current
  
-   - planet life sometimes display incorrectly (disappear on some platform)
+   - planet life sometimes display incorrectly (disappear on some platform) (possibly fixed, lack of sdl_gfx lib)
+   - random number will not work correctly in generated binaries. (fixed)

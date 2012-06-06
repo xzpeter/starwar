@@ -44,10 +44,16 @@ src="p2.png"/>
 #+END_HTML
 
 * download
- 
-  All the source code can be downloaded at github [[https://github.com/xzpeter/starwar][here]]. 
   
-  Binaries will be released later on. 
+** source code
+  
+   All the source code can be downloaded at github [[https://github.com/xzpeter/starwar][here]]. 
+   
+** binary
+   
+   [[https://github.com/downloads/xzpeter/starwar/starwar-linux-0.11-binary.tgz][download starwar-0.11 for linux]]
+   
+   currently, there are only binary for linux platform. 
 
 * installation
   
